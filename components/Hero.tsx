@@ -94,7 +94,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
           className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3.5"
         >
           <button
-            onClick={() => onOpenBooking()}
+            onClick={() => onOpenBooking(undefined)}
             className="w-full sm:w-auto flex items-center justify-center space-x-2 bg-[#522714] hover:bg-[#784026] text-white px-7 py-3.5 rounded-full font-medium text-sm sm:text-base transition-all shadow-md hover:shadow-lg active:scale-95 group cursor-pointer"
           >
             <Calendar className="w-4 h-4" />

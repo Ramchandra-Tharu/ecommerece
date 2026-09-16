@@ -149,7 +149,7 @@ export default function TreatmentsSection({ onSelectTreatment }: TreatmentsSecti
           {/* Action Buttons Top Right */}
           <div className="flex flex-wrap items-center gap-3 shrink-0">
             <button
-              onClick={() => onSelectTreatment()}
+              onClick={() => onSelectTreatment(undefined)}
               className="px-6 py-3 rounded-full bg-[#784026] hover:bg-[#522714] text-white font-medium text-xs sm:text-sm transition-all shadow-sm flex items-center space-x-2 cursor-pointer"
             >
               <Calendar className="w-3.5 h-3.5" />
