@@ -6,7 +6,7 @@ import Link from "next/link";
 import { Calendar, ArrowUpRight } from "lucide-react";
 
 interface TreatmentsSectionProps {
-  onSelectTreatment: (treatmentName: string) => void;
+  onSelectTreatment: (treatmentName?: string) => void;
 }
 
 export const TREATMENTS_DATA = [
