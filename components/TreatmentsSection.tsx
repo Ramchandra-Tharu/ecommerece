@@ -6,7 +6,7 @@ import Link from "next/link";
 import { Calendar, ArrowUpRight } from "lucide-react";
 
 interface TreatmentsSectionProps {
-  onSelectTreatment: (treatmentName?: string) => void;
+  onSelectTreatment?: (treatmentName?: string) => void;
 }
 
 export const TREATMENTS_DATA = [
@@ -149,7 +149,7 @@ export default function TreatmentsSection({ onSelectTreatment }: TreatmentsSecti
           {/* Action Buttons Top Right */}
           <div className="flex flex-wrap items-center gap-3 shrink-0">
             <button
-              onClick={() => onSelectTreatment(undefined)}
+              onClick={() => onSelectTreatment?.(undefined)}
               className="px-6 py-3 rounded-full bg-[#784026] hover:bg-[#522714] text-white font-medium text-xs sm:text-sm transition-all shadow-sm flex items-center space-x-2 cursor-pointer"
             >
               <Calendar className="w-3.5 h-3.5" />
@@ -190,7 +190,7 @@ export default function TreatmentsSection({ onSelectTreatment }: TreatmentsSecti
                 key={treatment.id}
                 onMouseEnter={() => setHoveredId(treatment.id)}
                 onMouseLeave={() => setHoveredId(null)}
-                onClick={() => onSelectTreatment(treatment.title)}
+                onClick={() => onSelectTreatment?.(treatment.title)}
                 className={`relative py-5 sm:py-7 px-5 sm:px-8 rounded-2xl sm:rounded-3xl transition-all duration-300 cursor-pointer group flex flex-col sm:flex-row sm:items-center justify-between gap-5 ${isHovered
                     ? "bg-[#FAF3EE] shadow-md border border-[#EADCD4] scale-[0.99] sm:scale-[0.995]"
                     : "bg-transparent border border-transparent hover:bg-[#FAF3EE]/50"
