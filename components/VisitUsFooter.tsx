@@ -139,11 +139,11 @@ export default function VisitUsFooter({ onOpenBooking }: VisitUsFooterProps) {
 
         {/* Footer Bottom Links & Copyright */}
         <div className="pt-10 flex flex-col sm:flex-row items-center justify-between text-xs text-[#EBD5C8]/70 space-y-4 sm:space-y-0">
-          <div className="flex items-center space-x-3">
-            <div className="w-7 h-7 rounded-full bg-[#EBD5C8] text-[#522714] flex items-center justify-center font-serif text-xs font-bold tracking-wider shrink-0">
-              YS
-            </div>
+          <div className="flex items-center space-x-2">
             <span className="font-serif text-2xl text-white">Yashu®</span>
+            <span className="font-serif text-xs font-semibold tracking-widest text-[#EBD5C8] border border-[#EBD5C8]/40 px-1.5 py-0.5 rounded-full shrink-0">
+              YS
+            </span>
             <span className="ml-2">© {new Date().getFullYear()} Yashu Aesthetics. All rights reserved.</span>
           </div>
 

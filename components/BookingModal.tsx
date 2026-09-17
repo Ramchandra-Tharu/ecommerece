@@ -53,12 +53,12 @@ export default function BookingModal({ isOpen, onClose, initialTreatment }: Book
         >
           {/* Header */}
           <div className="flex items-center justify-between p-6 bg-[#FAF6F3] border-b border-[#E5D5CD]">
-            <div className="flex items-center space-x-2.5">
-              <div className="w-7 h-7 rounded-full bg-[#522714] text-[#FAF6F3] flex items-center justify-center font-serif text-xs font-semibold tracking-wider border border-[#E5D5CD] shadow-xs shrink-0">
-                YS
-              </div>
+            <div className="flex items-center space-x-2">
               <span className="font-serif text-2xl font-normal text-[#522714]">Yashu®</span>
-              <span className="text-xs tracking-wider uppercase bg-[#EBD5C8] text-[#522714] px-2.5 py-1 rounded-full font-medium">
+              <span className="font-serif text-xs font-semibold tracking-widest text-[#784026] border border-[#784026]/40 px-1.5 py-0.5 rounded-full shrink-0">
+                YS
+              </span>
+              <span className="text-xs tracking-wider uppercase bg-[#EBD5C8] text-[#522714] px-2.5 py-1 rounded-full font-medium ml-1">
                 Online Consultation
               </span>
             </div>
