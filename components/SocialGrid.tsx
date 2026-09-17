@@ -16,7 +16,7 @@ export default function SocialGrid() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-10">
           <div>
             <span className="text-xs font-semibold uppercase tracking-widest text-[#784026] block mb-2">
-              @klinik_aesthetics
+              @yashu_aesthetics
             </span>
             <h2 className="font-serif text-3xl sm:text-4xl text-[#2D1F17] font-normal">
               Our journey continues on social.
@@ -45,7 +45,7 @@ export default function SocialGrid() {
             >
               <img
                 src={img}
-                alt={`Klinik Instagram post ${i + 1}`}
+                alt={`Yashu Instagram post ${i + 1}`}
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-[#522714]/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">

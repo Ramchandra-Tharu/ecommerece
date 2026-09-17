@@ -16,11 +16,11 @@ const instrumentSans = Instrument_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Klinik - Aesthetic & Dermatology Clinic",
-  description: "Aesthetic clinic website for medical spas, skincare clinics, and cosmetic treatment providers. Ideal for showcasing treatments, consultations, and client results.",
+  title: "Yashu - Beauty Parlour & Aesthetic Care",
+  description: "Beauty parlour & aesthetic clinic website for skincare, bridal makeup, hair care, and aesthetic treatments.",
   openGraph: {
-    title: "Klinik - Aesthetic & Dermatology Clinic",
-    description: "Subtle treatments. Natural results. Modern aesthetic care tailored to your goals.",
+    title: "Yashu - Beauty Parlour & Aesthetic Care",
+    description: "Subtle treatments. Natural results. Timeless beauty care tailored to your goals.",
   },
 };
 

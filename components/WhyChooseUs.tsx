@@ -62,7 +62,7 @@ export default function WhyChooseUs() {
           <div className="relative rounded-3xl overflow-hidden border border-[#E5D5CD] aspect-4/3 shadow-md">
             <img
               src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=800&q=80"
-              alt="Klinik Aesthetics Professional Care"
+              alt="Yashu Aesthetics Professional Care"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#522714]/40 via-transparent to-transparent" />

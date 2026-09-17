@@ -92,8 +92,8 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h4 className="font-medium text-[#2D1F17]">Email</h4>
-                    <a href="mailto:contact@klinik-aesthetics.com" className="text-[#784026] hover:underline mt-0.5 block">
-                      contact@klinik-aesthetics.com
+                    <a href="mailto:contact@yashu-aesthetics.com" className="text-[#784026] hover:underline mt-0.5 block">
+                      contact@yashu-aesthetics.com
                     </a>
                   </div>
                 </div>

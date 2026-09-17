@@ -43,7 +43,7 @@ export default function AboutPage() {
           >
             <Sparkles className="w-3.5 h-3.5 text-[#784026]" />
             <span className="text-xs font-semibold tracking-wider uppercase text-[#522714]">
-              About Klinik Aesthetics
+              About Yashu Aesthetics
             </span>
           </motion.div>
 
@@ -62,7 +62,7 @@ export default function AboutPage() {
             transition={{ delay: 0.2 }}
             className="mt-6 text-base sm:text-lg text-[#8C6B5B] max-w-2xl mx-auto leading-relaxed"
           >
-            Founded with a commitment to subtle, refined enhancements. We combine evidence-based medicine with an artistic touch to celebrate your individual beauty.
+            Founded with a commitment to subtle, refined enhancements. We combine evidence-based care with an artistic touch to celebrate your individual beauty.
           </motion.p>
         </div>
       </section>
@@ -78,7 +78,7 @@ export default function AboutPage() {
               Enhancing confidence without altering who you are.
             </h2>
             <p className="text-base text-[#8C6B5B] leading-relaxed">
-              At Klinik®, we believe the best aesthetic work is undetectable. Our approach prioritizes facial harmony, skin health, and client safety over quick trends.
+              At Yashu®, we believe the best aesthetic work is undetectable. Our approach prioritizes facial harmony, skin health, and client safety over quick trends.
             </p>
             <div className="grid grid-cols-2 gap-6 pt-4">
               <div className="p-4 bg-[#FAF6F3] rounded-2xl border border-[#E5D5CD]">
@@ -97,7 +97,7 @@ export default function AboutPage() {
           <div className="relative rounded-3xl overflow-hidden aspect-4/3 border border-[#E5D5CD] shadow-lg">
             <img
               src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80"
-              alt="Klinik Aesthetics Clinic Environment"
+              alt="Yashu Aesthetics Clinic Environment"
               className="w-full h-full object-cover"
             />
           </div>

@@ -95,8 +95,8 @@ export default function VisitUsFooter({ onOpenBooking }: VisitUsFooterProps) {
                   </li>
                   <li className="flex items-center space-x-3">
                     <Mail className="w-4 h-4 text-[#EBD5C8] shrink-0" />
-                    <a href="mailto:contact@klinik-aesthetics.com" className="hover:text-white transition-colors">
-                      contact@klinik-aesthetics.com
+                    <a href="mailto:contact@yashu-aesthetics.com" className="hover:text-white transition-colors">
+                      contact@yashu-aesthetics.com
                     </a>
                   </li>
                 </ul>
@@ -122,7 +122,7 @@ export default function VisitUsFooter({ onOpenBooking }: VisitUsFooterProps) {
               </div>
 
               <div className="relative z-10 bg-[#2D1F17]/90 backdrop-blur-md p-4 rounded-2xl border border-[#522714] space-y-1">
-                <p className="font-semibold text-white text-sm">Klinik Aesthetic Clinic</p>
+                <p className="font-semibold text-white text-sm">Yashu Aesthetic Clinic</p>
                 <p className="text-xs text-[#EBD5C8]/80">2148 Fillmore St, San Francisco</p>
                 <a
                   href="https://maps.google.com"
@@ -139,9 +139,12 @@ export default function VisitUsFooter({ onOpenBooking }: VisitUsFooterProps) {
 
         {/* Footer Bottom Links & Copyright */}
         <div className="pt-10 flex flex-col sm:flex-row items-center justify-between text-xs text-[#EBD5C8]/70 space-y-4 sm:space-y-0">
-          <div className="flex items-center space-x-6">
-            <span className="font-serif text-2xl text-white">Klinik®</span>
-            <span>© {new Date().getFullYear()} Klinik Aesthetics. All rights reserved.</span>
+          <div className="flex items-center space-x-3">
+            <div className="w-7 h-7 rounded-full bg-[#EBD5C8] text-[#522714] flex items-center justify-center font-serif text-xs font-bold tracking-wider shrink-0">
+              YS
+            </div>
+            <span className="font-serif text-2xl text-white">Yashu®</span>
+            <span className="ml-2">© {new Date().getFullYear()} Yashu Aesthetics. All rights reserved.</span>
           </div>
 
           <div className="flex items-center space-x-6">

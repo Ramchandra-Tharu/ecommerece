@@ -40,9 +40,12 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
         {/* Brand Logo */}
-        <Link href="/" className="group flex items-center space-x-1">
-          <span className="font-serif text-3xl md:text-4xl tracking-tight text-[#522714] font-normal transition-transform group-hover:scale-105">
-            Klinik<span className="text-sm font-sans align-top ml-0.5 font-medium">®</span>
+        <Link href="/" className="group flex items-center space-x-2.5">
+          <div className="w-8 h-8 md:w-9 md:h-9 rounded-full bg-[#522714] text-[#FAF6F3] flex items-center justify-center font-serif text-xs md:text-sm font-semibold tracking-wider border border-[#E5D5CD] shadow-xs group-hover:scale-105 transition-transform shrink-0">
+            YS
+          </div>
+          <span className="font-serif text-2xl md:text-3xl tracking-tight text-[#522714] font-normal transition-transform group-hover:scale-105">
+            Yashu<span className="text-xs font-sans align-top ml-0.5 font-medium text-[#8C6B5B]">®</span>
           </span>
         </Link>
 
