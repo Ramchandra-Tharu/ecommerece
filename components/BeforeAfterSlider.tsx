@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Sparkles, SlidersHorizontal, CheckCircle2, Calendar, Maximize2, ShieldCheck, ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -101,17 +101,41 @@ export default function BeforeAfterSlider({ onSelectTreatment }: BeforeAfterSlid
   const [sliderPosition, setSliderPosition] = useState(50);
   const [isDragging, setIsDragging] = useState(false);
   const [showFullView, setShowFullView] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const currentResult = TRANSFORMATIONS[activeTab];
+
+  const startInterval = () => {
+    if (intervalRef.current) clearInterval(intervalRef.current);
+    intervalRef.current = setInterval(() => {
+      setActiveTab((prev) => (prev === TRANSFORMATIONS.length - 1 ? 0 : prev + 1));
+      setSliderPosition(50);
+    }, 4000);
+  };
+
+  // Auto-advance every 4 seconds
+  useEffect(() => {
+    if (!isPaused) {
+      startInterval();
+    } else {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    }
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    };
+  }, [isPaused]);
 
   const handlePrev = () => {
     setActiveTab((prev) => (prev === 0 ? TRANSFORMATIONS.length - 1 : prev - 1));
     setSliderPosition(50);
+    startInterval(); // Reset timer on manual navigation
   };
 
   const handleNext = () => {
     setActiveTab((prev) => (prev === TRANSFORMATIONS.length - 1 ? 0 : prev + 1));
     setSliderPosition(50);
+    startInterval(); // Reset timer on manual navigation
   };
 
   const handleMove = (clientX: number, rect: DOMRect) => {
@@ -169,6 +193,25 @@ export default function BeforeAfterSlider({ onSelectTreatment }: BeforeAfterSlid
           </motion.p>
         </div>
 
+        {/* Progress Dots + Auto indicator */}
+        <div className="flex items-center justify-center space-x-3 mb-8">
+          {TRANSFORMATIONS.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => { setActiveTab(index); setSliderPosition(50); startInterval(); }}
+              className={`transition-all duration-300 rounded-full cursor-pointer ${
+                activeTab === index
+                  ? "w-7 h-2.5 bg-[#522714]"
+                  : "w-2.5 h-2.5 bg-[#E5D5CD] hover:bg-[#784026]"
+              }`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
+          <span className={`ml-2 text-[11px] font-semibold px-2.5 py-0.5 rounded-full border ${isPaused ? "text-[#8C6B5B] bg-[#FAF6F3] border-[#E5D5CD]" : "text-[#522714] bg-[#EBD5C8]/60 border-[#E5D5CD]"}`}>
+            {isPaused ? "⏸ Paused" : "▶ Auto"}
+          </span>
+        </div>
+
         {/* Main Transformation Container */}
         <AnimatePresence mode="wait">
           <motion.div
@@ -178,6 +221,8 @@ export default function BeforeAfterSlider({ onSelectTreatment }: BeforeAfterSlid
             exit={{ opacity: 0, y: -15 }}
             transition={{ duration: 0.3 }}
             className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center bg-white p-6 sm:p-10 rounded-3xl border border-[#E5D5CD] shadow-xl relative"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
           >
             {/* Left Column: Image Viewer with < > Arrows (7 Cols) */}
             <div className="lg:col-span-7 space-y-3">
