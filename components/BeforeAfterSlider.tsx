@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Sparkles, SlidersHorizontal, CheckCircle2, Calendar, Maximize2, ShieldCheck, ChevronLeft, ChevronRight } from "lucide-react";
+import { Sparkles, SlidersHorizontal, CheckCircle2, Calendar, ChevronLeft, ChevronRight } from "lucide-react";
 
 interface BeforeAfterSliderProps {
   onSelectTreatment?: (treatmentName: string) => void;
@@ -100,7 +100,6 @@ export default function BeforeAfterSlider({ onSelectTreatment }: BeforeAfterSlid
   const [activeTab, setActiveTab] = useState(0);
   const [sliderPosition, setSliderPosition] = useState(50);
   const [isDragging, setIsDragging] = useState(false);
-  const [showFullView, setShowFullView] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
@@ -193,24 +192,6 @@ export default function BeforeAfterSlider({ onSelectTreatment }: BeforeAfterSlid
           </motion.p>
         </div>
 
-        {/* Progress Dots + Auto indicator */}
-        <div className="flex items-center justify-center space-x-3 mb-8">
-          {TRANSFORMATIONS.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => { setActiveTab(index); setSliderPosition(50); startInterval(); }}
-              className={`transition-all duration-300 rounded-full cursor-pointer ${
-                activeTab === index
-                  ? "w-7 h-2.5 bg-[#522714]"
-                  : "w-2.5 h-2.5 bg-[#E5D5CD] hover:bg-[#784026]"
-              }`}
-              aria-label={`Go to slide ${index + 1}`}
-            />
-          ))}
-          <span className={`ml-2 text-[11px] font-semibold px-2.5 py-0.5 rounded-full border ${isPaused ? "text-[#8C6B5B] bg-[#FAF6F3] border-[#E5D5CD]" : "text-[#522714] bg-[#EBD5C8]/60 border-[#E5D5CD]"}`}>
-            {isPaused ? "⏸ Paused" : "▶ Auto"}
-          </span>
-        </div>
 
         {/* Main Transformation Container */}
         <AnimatePresence mode="wait">
@@ -224,88 +205,44 @@ export default function BeforeAfterSlider({ onSelectTreatment }: BeforeAfterSlid
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
           >
-            {/* Left Column: Image Viewer with < > Arrows (7 Cols) */}
+            {/* Left Column: Image Viewer (7 Cols) */}
             <div className="lg:col-span-7 space-y-3">
-              {/* Controls Bar with Navigation Arrows & Status */}
-              <div className="flex items-center justify-between px-1">
-                <div className="flex items-center space-x-2">
-                  <span className="text-xs font-semibold text-[#784026] uppercase tracking-wider bg-[#EBD5C8]/60 px-3 py-1 rounded-full flex items-center space-x-1.5">
-                    <ShieldCheck className="w-3.5 h-3.5" />
-                    <span>{currentResult.badge}</span>
-                  </span>
-                  <span className="text-xs font-semibold text-[#8C6B5B] bg-[#FAF6F3] px-2.5 py-1 rounded-full border border-[#E5D5CD]">
-                    {activeTab + 1} / {TRANSFORMATIONS.length}
-                  </span>
-                </div>
-
-                <div className="flex items-center space-x-2">
-                  {/* Prev Arrow */}
-                  <button
-                    onClick={handlePrev}
-                    aria-label="Previous Transformation"
-                    className="p-2 rounded-full bg-[#FAF6F3] hover:bg-[#522714] text-[#522714] hover:text-white border border-[#E5D5CD] transition-all shadow-sm cursor-pointer"
-                  >
-                    <ChevronLeft className="w-4 h-4" />
-                  </button>
-
-                  {/* Next Arrow */}
-                  <button
-                    onClick={handleNext}
-                    aria-label="Next Transformation"
-                    className="p-2 rounded-full bg-[#FAF6F3] hover:bg-[#522714] text-[#522714] hover:text-white border border-[#E5D5CD] transition-all shadow-sm cursor-pointer"
-                  >
-                    <ChevronRight className="w-4 h-4" />
-                  </button>
-
-                  <button
-                    onClick={() => setShowFullView(!showFullView)}
-                    className="text-xs text-[#784026] hover:text-[#522714] font-medium flex items-center space-x-1 bg-[#FAF6F3] hover:bg-[#EBD5C8]/40 px-3 py-1.5 rounded-full border border-[#E5D5CD] transition-colors cursor-pointer ml-1"
-                  >
-                    {showFullView ? (
-                      <>
-                        <SlidersHorizontal className="w-3.5 h-3.5" />
-                        <span className="hidden sm:inline">Slider Lens</span>
-                      </>
-                    ) : (
-                      <>
-                        <Maximize2 className="w-3.5 h-3.5" />
-                        <span className="hidden sm:inline">Full Side-by-Side</span>
-                      </>
-                    )}
-                  </button>
-                </div>
+              {/* Photo counter */}
+              <div className="flex items-center px-1">
+                <span className="text-xs font-semibold text-[#8C6B5B] bg-[#FAF6F3] px-2.5 py-1 rounded-full border border-[#E5D5CD]">
+                  {activeTab + 1} / {TRANSFORMATIONS.length}
+                </span>
               </div>
 
-              {/* Image Card Container with Overlay < > Navigation Icons */}
-              <div className="relative w-full aspect-[4/3] sm:aspect-[16/11] rounded-2xl overflow-hidden bg-[#FAF6F3] shadow-md border border-[#E5D5CD] group">
-                {/* Floating Previous (<) Arrow Button */}
+              {/* Image Card with Floating < > Navigation Arrows */}
+              <div className="relative w-full aspect-[4/3] sm:aspect-[16/11] rounded-2xl overflow-hidden bg-[#FAF6F3] shadow-md border border-[#E5D5CD]">
+                {/* Floating Previous Arrow */}
                 <button
                   onClick={handlePrev}
                   aria-label="Previous image"
-                  className="absolute left-3 top-1/2 -translate-y-1/2 z-30 p-3 rounded-full bg-white/80 hover:bg-[#522714] text-[#522714] hover:text-white backdrop-blur-md border border-[#E5D5CD] shadow-lg transition-all transform hover:scale-110 cursor-pointer"
+                  className="absolute left-3 top-1/2 -translate-y-1/2 z-30 p-3 rounded-full bg-white/80 hover:bg-[#522714] text-[#522714] hover:text-white backdrop-blur-md border border-[#E5D5CD] shadow-lg transition-all hover:scale-110 cursor-pointer"
                 >
                   <ChevronLeft className="w-5 h-5" />
                 </button>
 
-                {/* Floating Next (>) Arrow Button */}
+                {/* Floating Next Arrow */}
                 <button
                   onClick={handleNext}
                   aria-label="Next image"
-                  className="absolute right-3 top-1/2 -translate-y-1/2 z-30 p-3 rounded-full bg-white/80 hover:bg-[#522714] text-[#522714] hover:text-white backdrop-blur-md border border-[#E5D5CD] shadow-lg transition-all transform hover:scale-110 cursor-pointer"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 z-30 p-3 rounded-full bg-white/80 hover:bg-[#522714] text-[#522714] hover:text-white backdrop-blur-md border border-[#E5D5CD] shadow-lg transition-all hover:scale-110 cursor-pointer"
                 >
                   <ChevronRight className="w-5 h-5" />
                 </button>
 
-                {!showFullView ? (
-                  /* Interactive Split Drag Slider */
-                  <div
-                    className="relative w-full h-full cursor-ew-resize select-none touch-none"
-                    onMouseDown={() => setIsDragging(true)}
-                    onMouseUp={() => setIsDragging(false)}
-                    onMouseLeave={() => setIsDragging(false)}
-                    onMouseMove={handleMouseMove}
-                    onTouchMove={handleTouchMove}
-                  >
+                {/* Drag Slider */}
+                <div
+                  className="relative w-full h-full cursor-ew-resize select-none touch-none"
+                  onMouseDown={() => setIsDragging(true)}
+                  onMouseUp={() => setIsDragging(false)}
+                  onMouseLeave={() => setIsDragging(false)}
+                  onMouseMove={handleMouseMove}
+                  onTouchMove={handleTouchMove}
+                >
                     {/* Full Base Transformation Image */}
                     <img
                       src={currentResult.image}
@@ -331,25 +268,9 @@ export default function BeforeAfterSlider({ onSelectTreatment }: BeforeAfterSlid
                       </div>
                     </div>
                   </div>
-                ) : (
-                  /* Full Image Mode */
-                  <div className="relative w-full h-full flex items-center justify-center p-2 bg-[#FAF6F3]">
-                    <img
-                      src={currentResult.image}
-                      alt={`${currentResult.title} Full View`}
-                      className="w-full h-full object-contain rounded-xl"
-                    />
-                    <span className="absolute top-4 left-4 bg-black/70 backdrop-blur-md text-white text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">
-                      BEFORE & AFTER
-                    </span>
-                  </div>
-                )}
               </div>
 
-              <div className="flex items-center justify-between text-xs text-[#8C6B5B] pt-1">
-                <span>Use <b>&lt;</b> and <b>&gt;</b> arrows to switch client photos</span>
-                <span>{!showFullView ? "↔ Drag divider horizontally" : "🔍 Full view photo"}</span>
-              </div>
+              <p className="text-center text-xs text-[#8C6B5B] mt-1">↔ Drag slider • Use arrows to switch photos</p>
             </div>
 
             {/* Right Column: Dynamic Description Panel (5 Cols) */}
@@ -400,32 +321,15 @@ export default function BeforeAfterSlider({ onSelectTreatment }: BeforeAfterSlid
                 <span className="text-[#8C6B5B]">{currentResult.bestFor}</span>
               </div>
 
-              {/* Action Button & Next/Prev Controls */}
-              <div className="pt-2 flex flex-col sm:flex-row items-center gap-3">
+              {/* Action Button */}
+              <div className="pt-2">
                 <button
                   onClick={() => onSelectTreatment && onSelectTreatment(currentResult.title)}
-                  className="w-full sm:flex-1 px-7 py-3.5 bg-[#522714] hover:bg-[#784026] text-white text-sm font-medium rounded-full transition-all shadow-md flex items-center justify-center space-x-2 cursor-pointer group"
+                  className="w-full sm:w-auto px-7 py-3.5 bg-[#522714] hover:bg-[#784026] text-white text-sm font-medium rounded-full transition-all shadow-md flex items-center justify-center space-x-2 cursor-pointer"
                 >
                   <Calendar className="w-4 h-4" />
                   <span>Book {currentResult.title}</span>
                 </button>
-
-                <div className="flex items-center space-x-2 shrink-0">
-                  <button
-                    onClick={handlePrev}
-                    aria-label="Previous photo"
-                    className="p-3 rounded-full bg-[#FAF6F3] hover:bg-[#522714] text-[#522714] hover:text-white border border-[#E5D5CD] transition-all shadow-sm cursor-pointer"
-                  >
-                    <ChevronLeft className="w-4 h-4" />
-                  </button>
-                  <button
-                    onClick={handleNext}
-                    aria-label="Next photo"
-                    className="p-3 rounded-full bg-[#FAF6F3] hover:bg-[#522714] text-[#522714] hover:text-white border border-[#E5D5CD] transition-all shadow-sm cursor-pointer"
-                  >
-                    <ChevronRight className="w-4 h-4" />
-                  </button>
-                </div>
               </div>
             </div>
           </motion.div>
