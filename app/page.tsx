@@ -39,7 +39,7 @@ export default function Home() {
       
       <StatsSection />
       
-      <BeforeAfterSlider />
+      <BeforeAfterSlider onSelectTreatment={(treatment) => handleOpenBooking(treatment)} />
       
       <Testimonials />
       

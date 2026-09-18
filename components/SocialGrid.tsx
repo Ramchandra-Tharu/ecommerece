@@ -3,9 +3,9 @@
 import { Instagram, ArrowUpRight } from "lucide-react";
 
 const INSTAGRAM_POSTS = [
-  "https://images.unsplash.com/photo-1512290900674-5e58ed051d95?auto=format&fit=crop&w=500&q=80",
+  "/salon-of-yashu.jpg",
   "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=500&q=80",
-  "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=500&q=80",
+  "https://images.unsplash.com/photo-1512290900674-5e58ed051d95?auto=format&fit=crop&w=500&q=80",
   "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=500&q=80",
 ];
 

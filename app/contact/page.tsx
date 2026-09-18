@@ -116,7 +116,7 @@ export default function ContactPage() {
               <div
                 className="w-full h-48 rounded-2xl bg-cover bg-center border border-[#E5D5CD]"
                 style={{
-                  backgroundImage: `url('https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=800&q=80')`,
+                  backgroundImage: `url('/salon-of-yashu.jpg')`,
                 }}
               />
               <div className="mt-4 flex justify-between items-center">

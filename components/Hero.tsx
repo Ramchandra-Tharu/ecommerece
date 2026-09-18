@@ -83,7 +83,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
           transition={{ duration: 0.7, delay: 0.15 }}
           className="mt-4 md:mt-5 text-sm sm:text-base md:text-lg text-[#8C6B5B] max-w-xl mx-auto leading-relaxed font-sans"
         >
-          Premium beauty parlour services designed to pamper your hair, skin, nails, and bridal occasions with natural radiance.
+          Premium salon & beauty parlour services designed to pamper your hair, skin, nails, and bridal occasions with natural radiance.
         </motion.p>
 
         {/* Action Buttons */}

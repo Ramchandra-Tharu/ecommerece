@@ -109,9 +109,9 @@ export default function VisitUsFooter({ onOpenBooking }: VisitUsFooterProps) {
             <div className="w-full h-full min-h-[260px] rounded-3xl overflow-hidden border border-[#522714] relative bg-[#522714]/40 flex flex-col justify-between p-6">
               {/* Simulated Map Background pattern */}
               <div
-                className="absolute inset-0 opacity-30 bg-cover bg-center"
+                className="absolute inset-0 opacity-40 bg-cover bg-center"
                 style={{
-                  backgroundImage: `url('https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=800&q=80')`,
+                  backgroundImage: `url('/salon-of-yashu.jpg')`,
                 }}
               />
               <div className="relative z-10 flex justify-between items-start">

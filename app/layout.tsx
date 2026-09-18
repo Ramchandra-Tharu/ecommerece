@@ -16,11 +16,11 @@ const instrumentSans = Instrument_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Yashu - Beauty Parlour & Aesthetic Care",
-  description: "Beauty parlour & aesthetic clinic website for skincare, bridal makeup, hair care, and aesthetic treatments.",
+  title: "Yashu — Salon & Beauty Parlour",
+  description: "Yashu is a premier Salon & Beauty Parlour offering professional hair styling, hair care, facials, bridal makeup, mehendi, eyebrow shaping, and skin care.",
   openGraph: {
-    title: "Yashu - Beauty Parlour & Aesthetic Care",
-    description: "Subtle treatments. Natural results. Timeless beauty care tailored to your goals.",
+    title: "Yashu — Salon & Beauty Parlour",
+    description: "Full-service salon and beauty parlour offering professional hair styling, skin care, bridal makeup, and beauty rituals.",
   },
 };
 

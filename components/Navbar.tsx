@@ -41,12 +41,19 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
         {/* Brand Logo */}
         <Link href="/" className="group flex items-center space-x-2">
-          <span className="font-serif text-3xl md:text-4xl tracking-tight text-[#522714] font-normal transition-transform group-hover:scale-105">
-            Yashu<span className="text-xs font-sans align-top ml-0.5 font-medium text-[#8C6B5B]">®</span>
-          </span>
-          <span className="font-serif text-xs md:text-sm font-semibold tracking-widest text-[#784026] border border-[#784026]/40 px-2 py-0.5 rounded-full transition-transform group-hover:scale-105 shrink-0">
-            YS
-          </span>
+          <div className="flex flex-col">
+            <div className="flex items-center space-x-1.5">
+              <span className="font-serif text-2xl md:text-3xl tracking-tight text-[#522714] font-normal transition-transform group-hover:scale-105 leading-none">
+                Yashu<span className="text-xs font-sans align-top ml-0.5 font-medium text-[#8C6B5B]">®</span>
+              </span>
+              <span className="font-serif text-[10px] font-semibold tracking-widest text-[#784026] border border-[#784026]/40 px-1.5 py-0.2 rounded-full transition-transform group-hover:scale-105 shrink-0">
+                YS
+              </span>
+            </div>
+            <span className="text-[10px] uppercase font-sans tracking-widest text-[#784026] font-semibold mt-0.5">
+              Salon & Beauty Parlour
+            </span>
+          </div>
         </Link>
 
         {/* Desktop Navigation */}

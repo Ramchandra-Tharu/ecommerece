@@ -96,8 +96,8 @@ export default function AboutPage() {
 
           <div className="relative rounded-3xl overflow-hidden aspect-4/3 border border-[#E5D5CD] shadow-lg">
             <img
-              src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80"
-              alt="Yashu Aesthetics Clinic Environment"
+              src="/salon-of-yashu.jpg"
+              alt="Salon of Yashu Sanctuary & Interior"
               className="w-full h-full object-cover"
             />
           </div>

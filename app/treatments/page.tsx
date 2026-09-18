@@ -115,7 +115,7 @@ export default function TreatmentsPage() {
         </div>
       </section>
 
-      <BeforeAfterSlider />
+      <BeforeAfterSlider onSelectTreatment={(t) => handleOpenBooking(t)} />
       <FaqSection />
 
       <VisitUsFooter onOpenBooking={() => handleOpenBooking()} />
