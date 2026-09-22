@@ -13,7 +13,7 @@ export default function VisitUsFooter({ onOpenBooking }: VisitUsFooterProps) {
   };
 
   return (
-    <footer className="bg-[#2D1F17] text-[#FAF6F3] pt-24 pb-12 border-t border-[#784026]/40 relative overflow-hidden">
+    <footer className=" bg-[#FAF0EC] text-[#2D231E] pt-24 pb-12 border-t border-[#784026]/40 relative overflow-hidden">
       {/* Background Accent Glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-[#784026]/20 blur-3xl pointer-events-none" />
 
