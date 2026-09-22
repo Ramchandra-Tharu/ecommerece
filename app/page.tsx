@@ -8,9 +8,7 @@ import TreatmentsSection from "@/components/TreatmentsSection";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import StatsSection from "@/components/StatsSection";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
-import Testimonials from "@/components/Testimonials";
 import FaqSection from "@/components/FaqSection";
-import SocialGrid from "@/components/SocialGrid";
 import VisitUsFooter from "@/components/VisitUsFooter";
 import BookingModal from "@/components/BookingModal";
 
@@ -41,11 +39,7 @@ export default function Home() {
       
       <BeforeAfterSlider onSelectTreatment={(treatment) => handleOpenBooking(treatment)} />
       
-      <Testimonials />
-      
       <FaqSection />
-      
-      <SocialGrid />
       
       <VisitUsFooter onOpenBooking={() => handleOpenBooking()} />
       

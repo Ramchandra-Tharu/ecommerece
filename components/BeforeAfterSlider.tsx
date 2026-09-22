@@ -165,10 +165,6 @@ export default function BeforeAfterSlider({ onSelectTreatment }: BeforeAfterSlid
             viewport={{ once: true }}
             className="inline-flex items-center space-x-2 bg-[#EBD5C8]/70 border border-[#E5D5CD] px-4 py-1.5 rounded-full mb-4"
           >
-            <Sparkles className="w-3.5 h-3.5 text-[#784026]" />
-            <span className="text-xs font-semibold uppercase tracking-wider text-[#522714]">
-              Real People • Real Results
-            </span>
           </motion.div>
 
           <motion.h2
@@ -243,31 +239,31 @@ export default function BeforeAfterSlider({ onSelectTreatment }: BeforeAfterSlid
                   onMouseMove={handleMouseMove}
                   onTouchMove={handleTouchMove}
                 >
-                    {/* Full Base Transformation Image */}
-                    <img
-                      src={currentResult.image}
-                      alt={`${currentResult.title} Transformation`}
-                      className="absolute inset-0 w-full h-full object-contain bg-[#FAF6F3]"
-                    />
-                    
-                    {/* Floating Badges */}
-                    <span className="absolute top-4 left-4 z-10 bg-black/70 backdrop-blur-md text-white text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow">
-                      BEFORE
-                    </span>
-                    <span className="absolute top-4 right-4 z-10 bg-[#522714]/90 backdrop-blur-md text-white text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow">
-                      AFTER
-                    </span>
+                  {/* Full Base Transformation Image */}
+                  <img
+                    src={currentResult.image}
+                    alt={`${currentResult.title} Transformation`}
+                    className="absolute inset-0 w-full h-full object-contain bg-[#FAF6F3]"
+                  />
 
-                    {/* Reveal Divider Bar */}
-                    <div
-                      className="absolute top-0 bottom-0 w-1 bg-white shadow-2xl z-20 pointer-events-none"
-                      style={{ left: `${sliderPosition}%` }}
-                    >
-                      <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-10 h-10 bg-white text-[#522714] rounded-full flex items-center justify-center shadow-2xl border-2 border-[#E5D5CD]">
-                        <SlidersHorizontal className="w-4 h-4 rotate-90" />
-                      </div>
+                  {/* Floating Badges */}
+                  <span className="absolute top-4 left-4 z-10 bg-black/70 backdrop-blur-md text-white text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow">
+                    BEFORE
+                  </span>
+                  <span className="absolute top-4 right-4 z-10 bg-[#522714]/90 backdrop-blur-md text-white text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow">
+                    AFTER
+                  </span>
+
+                  {/* Reveal Divider Bar */}
+                  <div
+                    className="absolute top-0 bottom-0 w-1 bg-white shadow-2xl z-20 pointer-events-none"
+                    style={{ left: `${sliderPosition}%` }}
+                  >
+                    <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-10 h-10 bg-white text-[#522714] rounded-full flex items-center justify-center shadow-2xl border-2 border-[#E5D5CD]">
+                      <SlidersHorizontal className="w-4 h-4 rotate-90" />
                     </div>
                   </div>
+                </div>
               </div>
 
               <p className="text-center text-xs text-[#8C6B5B] mt-1">↔ Drag slider • Use arrows to switch photos</p>
